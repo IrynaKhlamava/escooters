@@ -1,0 +1,60 @@
+plugins {
+    id 'java'
+    id 'groovy'
+    id 'war'
+    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 12
+
+repositories {
+    mavenCentral()
+}
+
+compileJava {
+    options.annotationProcessorGeneratedSourcesDirectory = file("${buildDir}/generated")
+}
+
+
+
+dependencies {
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.2'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.2'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.26'
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.5.7.Final'
+    implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.5.3.Final'
+    implementation group: 'org.springframework', name: 'spring-core', version: '5.3.10'
+    implementation group: 'org.springframework', name: 'spring-context', version: '5.3.10'
+    implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.3.10'
+    implementation group: 'org.springframework', name: 'spring-orm', version: '5.3.10'
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: '5.3.10'
+    compileOnly group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.5'
+    implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.4.4'
+    implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.12.4'
+    implementation group: 'org.springframework.security', name: 'spring-security-web', version: '5.5.0'
+    implementation group: 'org.springframework.security', name: 'spring-security-config', version: '5.5.0'
+    implementation group: 'org.springframework.security', name: 'spring-security-core', version: '5.5.0'
+    implementation group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.5.0'
+    implementation group: 'jstl', name: 'jstl', version: '1.2'
+    compileOnly group: 'javax.servlet', name: 'jsp-api', version: '2.0'
+    annotationProcessor("org.hibernate:hibernate-jpamodelgen:5.6.3.Final")
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.8.2'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.8.2'
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.0.0'
+    testCompile ('org.junit.jupiter:junit-jupiter:5.8.2')
+
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+}
+
+
+
+
+
+
