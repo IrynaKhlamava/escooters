@@ -1,5 +1,3 @@
-# escooters
-E-scooters
 Теория:
 1)	JUnit
 2)	Spring IOC
